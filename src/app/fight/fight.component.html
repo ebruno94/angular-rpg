@@ -1,0 +1,4 @@
+<div *ngIf="currentCharacter.health > 0 && currentMonster.health > 0">
+  <button type="button" (click)="currentCharacter.attack(currentMonster); currentMonster.attack(currentCharacter)">Attack!</button>
+  <p>{{currentMonster.name}}, {{currentMonster.health}}/{{currentMonster.maxHealth}}</p>
+</div>

@@ -1,0 +1,4 @@
+<h1>Welcome to our Angular RPG!!!! Yaaaayyyyy</h1>
+<app-character-create (sendUpCurrentCharacter)="setCurrentCharacter($event)">Loading...</app-character-create>
+<app-character-display [childCurrentCharacter]="currentCharacter" (initiateFight)="setFighting($event)">Loading</app-character-display>
+<app-fight [currentCharacter] = "currentCharacter" *ngIf="isFighting">Loading...</app-fight>
