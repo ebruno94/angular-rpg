@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Character } from '../models/characters';
 
 @Component({
@@ -9,10 +9,9 @@ import { Character } from '../models/characters';
 export class CharacterDisplayComponent {
 
   @Input() childCurrentCharacter: Character;
-  @Output() initiateFight = new EventEmitter();
 
-  beginFight(){
-    this.initiateFight.emit(true);
+  deleteItem(e){
+    e.parentNode.parentNode.removeChild(e.parentNode);
   }
 
 }

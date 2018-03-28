@@ -4,15 +4,22 @@ export class Item {
     this.useItem = (() => {
       return function(character){
         character[attribute] += magnitude;
-        return `${this.name} has been used. ${character.name}'s ${attribute} has been changed by ${magnitude}'`;
+        console.log(`${this.name} has been used. ${character.name}'s ${attribute} has been changed by ${magnitude}'`);
       }
     })();
   }
   useItem(character){};
 }
 
-let healthPotion = new Item("Health Potion", "health", 20);
-let intelligencePotion = new Item("Intelligence Potion", "intelligence", 5);
-let defensePotion = new Item("Defense Potion", "defense", 5);
+export let itemsLibrary = {
+   healthPotion: function(){ return new Item("Health Potion", "health", 20); },
+   manaPotion: function(){ return new Item("Mana Potion", "mana", 20); },
+   strengthPotion : function(){ return new Item("Strength Potion", "strength", 5); },
+   intelligencePotion : function(){ return new Item("Intelligence Potion", "intelligence", 5); },
+   dexterityPotion : function(){ return new Item("Dexterity Potion", "dexterity", 5); },
+   defensePotion : function(){ return new Item("Defense Potion", "defense", 5); },
+}
 
-export let itemList: Item[] = [healthPotion, intelligencePotion, defensePotion];
+export let itemsLibraryKey = ["healthPotion", "manaPotion", "strengthPotion", "intelligencePotion", "dexterityPotion", "defensePotion"]; 
+
+export let itemList: Item[];
